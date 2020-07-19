@@ -1,0 +1,91 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: rgb(241, 174, 174);
+  display: flex;
+  height: 100vh;
+  place-items: center;
+  place-content: center;
+  font-size: 4rem;
+}
+
+.container {
+  height: 30rem;
+  width: 30rem;
+  background-color: white;
+  display: flex;
+  place-items: center;
+  place-content: center;
+
+  .cube {
+    width: 20rem;
+    height: 20rem;
+    opacity: 0.7;
+    position: relative;
+    perspective: 80rem;
+    transform-style: preserve-3d;
+
+    &_side {
+      background-color: red;
+      height: 20rem;
+      width: 20rem;
+      opacity: 0.7;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+    }
+
+    .back {
+      display: flex;
+      transition: all 2s 2s ease-in-out;
+      background-color: green;
+      transform: translateZ(-10rem);
+    }
+    .front {
+      display: flex;
+      transition: all 2s 2s ease-in-out;
+      background-color: green;
+      transform: translateZ(10rem);
+    }
+
+    .left {
+      display: flex;
+      transition: all 2s ease-in-out;
+      background-color: orange;
+      transform: translateX(-10rem) rotateY(-0.25turn);
+    }
+    .right {
+      display: flex;
+      transition: all 2s ease-in-out;
+      background-color: orange;
+      transform: translateX(10rem) rotateY(0.25turn);
+    }
+    .bottom {
+      display: flex;
+      transition: all 2s 1s ease-in-out;
+      background-color: red;
+      transform: translateY(10rem) rotateX(-0.25turn);
+    }
+    .top {
+      display: flex;
+      transition: all 2s 1s ease-in-out;
+      background-color: red;
+      transform: translateY(-10rem) rotateX(0.25turn);
+    }
+  }
+}
